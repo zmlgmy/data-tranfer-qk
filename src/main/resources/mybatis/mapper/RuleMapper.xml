@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tongdun.data.mapper.kratos.RuleMapper">
+  <resultMap id="BaseResultMap" type="com.tongdun.data.entity.Rule">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="UUID" jdbcType="CHAR" property="uuid" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="VALID" jdbcType="CHAR" property="valid" />
+    <result column="CAUSE_CODE" jdbcType="VARCHAR" property="causeCode" />
+    <result column="OPERATE_CODE" jdbcType="VARCHAR" property="operateCode" />
+    <result column="GMT_BEGIN" jdbcType="TIMESTAMP" property="gmtBegin" />
+    <result column="GMT_END" jdbcType="TIMESTAMP" property="gmtEnd" />
+    <result column="PRIORITY" jdbcType="INTEGER" property="priority" />
+    <result column="RISK_WEIGHT" jdbcType="REAL" property="riskWeight" />
+    <result column="GMT_CREATE" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="GMT_MODIFIED" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="DISPLAY_ORDER" jdbcType="INTEGER" property="displayOrder" />
+    <result column="FK_POLICY_UUID" jdbcType="CHAR" property="fkPolicyUuid" />
+    <result column="TEMPLATE" jdbcType="VARCHAR" property="template" />
+    <result column="PARENT_UUID" jdbcType="VARCHAR" property="parentUuid" />
+    <result column="IF_CLAUSE" jdbcType="VARCHAR" property="ifClause" />
+    <result column="WEIGHT_RATIO" jdbcType="REAL" property="weightRatio" />
+    <result column="WEIGHT_INDEX" jdbcType="CHAR" property="weightIndex" />
+    <result column="TEST_RUN" jdbcType="CHAR" property="testRun" />
+    <result column="APPLY_STATUS" jdbcType="VARCHAR" property="applyStatus" />
+    <result column="APPLY_TYPE" jdbcType="VARCHAR" property="applyType" />
+    <result column="FK_DEAL_TYPE_UUID" jdbcType="VARCHAR" property="fkDealTypeUuid" />
+    <result column="CUSTOM_ID" jdbcType="VARCHAR" property="customId" />
+    <result column="PHONES" jdbcType="VARCHAR" property="phones" />
+    <result column="MSG_INTERVAL" jdbcType="VARCHAR" property="msgInterval" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tongdun.data.entity.Rule">
+    <result column="TRIGGERS" jdbcType="LONGVARCHAR" property="triggers" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, UUID, NAME, VALID, CAUSE_CODE, OPERATE_CODE, GMT_BEGIN, GMT_END, PRIORITY, RISK_WEIGHT, 
+    GMT_CREATE, GMT_MODIFIED, DISPLAY_ORDER, FK_POLICY_UUID, TEMPLATE, PARENT_UUID, IF_CLAUSE, 
+    WEIGHT_RATIO, WEIGHT_INDEX, TEST_RUN, APPLY_STATUS, APPLY_TYPE, FK_DEAL_TYPE_UUID, 
+    CUSTOM_ID, PHONES, MSG_INTERVAL
+  </sql>
+  <sql id="Blob_Column_List">
+    TRIGGERS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from rule
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from rule
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.tongdun.data.entity.Rule">
+    insert into rule (ID, UUID, NAME, VALID, 
+      CAUSE_CODE, OPERATE_CODE, GMT_BEGIN, 
+      GMT_END, PRIORITY, RISK_WEIGHT, 
+      GMT_CREATE, GMT_MODIFIED, DISPLAY_ORDER, 
+      FK_POLICY_UUID, TEMPLATE, PARENT_UUID, 
+      IF_CLAUSE, WEIGHT_RATIO, WEIGHT_INDEX, 
+      TEST_RUN, APPLY_STATUS, APPLY_TYPE, 
+      FK_DEAL_TYPE_UUID, CUSTOM_ID, PHONES, 
+      TRIGGERS)
+    values (#{id,jdbcType=BIGINT}, #{uuid,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{valid,jdbcType=CHAR}, 
+      #{causeCode,jdbcType=VARCHAR}, #{operateCode,jdbcType=VARCHAR}, #{gmtBegin,jdbcType=TIMESTAMP}, 
+      #{gmtEnd,jdbcType=TIMESTAMP}, #{priority,jdbcType=INTEGER}, #{riskWeight,jdbcType=REAL}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, #{displayOrder,jdbcType=INTEGER}, 
+      #{fkPolicyUuid,jdbcType=CHAR}, #{template,jdbcType=VARCHAR}, #{parentUuid,jdbcType=VARCHAR}, 
+      #{ifClause,jdbcType=VARCHAR}, #{weightRatio,jdbcType=REAL}, #{weightIndex,jdbcType=CHAR}, 
+      #{testRun,jdbcType=CHAR}, #{applyStatus,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
+      #{fkDealTypeUuid,jdbcType=VARCHAR}, #{customId,jdbcType=VARCHAR}, #{phones,jdbcType=VARCHAR}, 
+      #{triggers,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tongdun.data.entity.Rule">
+    insert into rule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="uuid != null">
+        UUID,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="valid != null">
+        VALID,
+      </if>
+      <if test="causeCode != null">
+        CAUSE_CODE,
+      </if>
+      <if test="operateCode != null">
+        OPERATE_CODE,
+      </if>
+      <if test="gmtBegin != null">
+        GMT_BEGIN,
+      </if>
+      <if test="gmtEnd != null">
+        GMT_END,
+      </if>
+      <if test="priority != null">
+        PRIORITY,
+      </if>
+      <if test="riskWeight != null">
+        RISK_WEIGHT,
+      </if>
+      <if test="gmtCreate != null">
+        GMT_CREATE,
+      </if>
+      <if test="gmtModified != null">
+        GMT_MODIFIED,
+      </if>
+      <if test="displayOrder != null">
+        DISPLAY_ORDER,
+      </if>
+      <if test="fkPolicyUuid != null">
+        FK_POLICY_UUID,
+      </if>
+      <if test="template != null">
+        TEMPLATE,
+      </if>
+      <if test="parentUuid != null">
+        PARENT_UUID,
+      </if>
+      <if test="ifClause != null">
+        IF_CLAUSE,
+      </if>
+      <if test="weightRatio != null">
+        WEIGHT_RATIO,
+      </if>
+      <if test="weightIndex != null">
+        WEIGHT_INDEX,
+      </if>
+      <if test="testRun != null">
+        TEST_RUN,
+      </if>
+      <if test="applyStatus != null">
+        APPLY_STATUS,
+      </if>
+      <if test="applyType != null">
+        APPLY_TYPE,
+      </if>
+      <if test="fkDealTypeUuid != null">
+        FK_DEAL_TYPE_UUID,
+      </if>
+      <if test="customId != null">
+        CUSTOM_ID,
+      </if>
+      <if test="phones != null">
+        PHONES,
+      </if>
+      <if test="triggers != null">
+        TRIGGERS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="uuid != null">
+        #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null">
+        #{valid,jdbcType=CHAR},
+      </if>
+      <if test="causeCode != null">
+        #{causeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="operateCode != null">
+        #{operateCode,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtBegin != null">
+        #{gmtBegin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtEnd != null">
+        #{gmtEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="priority != null">
+        #{priority,jdbcType=INTEGER},
+      </if>
+      <if test="riskWeight != null">
+        #{riskWeight,jdbcType=REAL},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="displayOrder != null">
+        #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="fkPolicyUuid != null">
+        #{fkPolicyUuid,jdbcType=CHAR},
+      </if>
+      <if test="template != null">
+        #{template,jdbcType=VARCHAR},
+      </if>
+      <if test="parentUuid != null">
+        #{parentUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="ifClause != null">
+        #{ifClause,jdbcType=VARCHAR},
+      </if>
+      <if test="weightRatio != null">
+        #{weightRatio,jdbcType=REAL},
+      </if>
+      <if test="weightIndex != null">
+        #{weightIndex,jdbcType=CHAR},
+      </if>
+      <if test="testRun != null">
+        #{testRun,jdbcType=CHAR},
+      </if>
+      <if test="applyStatus != null">
+        #{applyStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null">
+        #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="fkDealTypeUuid != null">
+        #{fkDealTypeUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="customId != null">
+        #{customId,jdbcType=VARCHAR},
+      </if>
+      <if test="phones != null">
+        #{phones,jdbcType=VARCHAR},
+      </if>
+      <if test="triggers != null">
+        #{triggers,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tongdun.data.entity.Rule">
+    update rule
+    <set>
+      <if test="uuid != null">
+        UUID = #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null">
+        VALID = #{valid,jdbcType=CHAR},
+      </if>
+      <if test="causeCode != null">
+        CAUSE_CODE = #{causeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="operateCode != null">
+        OPERATE_CODE = #{operateCode,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtBegin != null">
+        GMT_BEGIN = #{gmtBegin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtEnd != null">
+        GMT_END = #{gmtEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="priority != null">
+        PRIORITY = #{priority,jdbcType=INTEGER},
+      </if>
+      <if test="riskWeight != null">
+        RISK_WEIGHT = #{riskWeight,jdbcType=REAL},
+      </if>
+      <if test="gmtCreate != null">
+        GMT_CREATE = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        GMT_MODIFIED = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="displayOrder != null">
+        DISPLAY_ORDER = #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="fkPolicyUuid != null">
+        FK_POLICY_UUID = #{fkPolicyUuid,jdbcType=CHAR},
+      </if>
+      <if test="template != null">
+        TEMPLATE = #{template,jdbcType=VARCHAR},
+      </if>
+      <if test="parentUuid != null">
+        PARENT_UUID = #{parentUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="ifClause != null">
+        IF_CLAUSE = #{ifClause,jdbcType=VARCHAR},
+      </if>
+      <if test="weightRatio != null">
+        WEIGHT_RATIO = #{weightRatio,jdbcType=REAL},
+      </if>
+      <if test="weightIndex != null">
+        WEIGHT_INDEX = #{weightIndex,jdbcType=CHAR},
+      </if>
+      <if test="testRun != null">
+        TEST_RUN = #{testRun,jdbcType=CHAR},
+      </if>
+      <if test="applyStatus != null">
+        APPLY_STATUS = #{applyStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null">
+        APPLY_TYPE = #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="fkDealTypeUuid != null">
+        FK_DEAL_TYPE_UUID = #{fkDealTypeUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="customId != null">
+        CUSTOM_ID = #{customId,jdbcType=VARCHAR},
+      </if>
+      <if test="phones != null">
+        PHONES = #{phones,jdbcType=VARCHAR},
+      </if>
+      <if test="triggers != null">
+        TRIGGERS = #{triggers,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tongdun.data.entity.Rule">
+    update rule
+    set UUID = #{uuid,jdbcType=CHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      VALID = #{valid,jdbcType=CHAR},
+      CAUSE_CODE = #{causeCode,jdbcType=VARCHAR},
+      OPERATE_CODE = #{operateCode,jdbcType=VARCHAR},
+      GMT_BEGIN = #{gmtBegin,jdbcType=TIMESTAMP},
+      GMT_END = #{gmtEnd,jdbcType=TIMESTAMP},
+      PRIORITY = #{priority,jdbcType=INTEGER},
+      RISK_WEIGHT = #{riskWeight,jdbcType=REAL},
+      GMT_CREATE = #{gmtCreate,jdbcType=TIMESTAMP},
+      GMT_MODIFIED = #{gmtModified,jdbcType=TIMESTAMP},
+      DISPLAY_ORDER = #{displayOrder,jdbcType=INTEGER},
+      FK_POLICY_UUID = #{fkPolicyUuid,jdbcType=CHAR},
+      TEMPLATE = #{template,jdbcType=VARCHAR},
+      PARENT_UUID = #{parentUuid,jdbcType=VARCHAR},
+      IF_CLAUSE = #{ifClause,jdbcType=VARCHAR},
+      WEIGHT_RATIO = #{weightRatio,jdbcType=REAL},
+      WEIGHT_INDEX = #{weightIndex,jdbcType=CHAR},
+      TEST_RUN = #{testRun,jdbcType=CHAR},
+      APPLY_STATUS = #{applyStatus,jdbcType=VARCHAR},
+      APPLY_TYPE = #{applyType,jdbcType=VARCHAR},
+      FK_DEAL_TYPE_UUID = #{fkDealTypeUuid,jdbcType=VARCHAR},
+      CUSTOM_ID = #{customId,jdbcType=VARCHAR},
+      PHONES = #{phones,jdbcType=VARCHAR},
+      TRIGGERS = #{triggers,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tongdun.data.entity.Rule">
+    update rule
+    set UUID = #{uuid,jdbcType=CHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      VALID = #{valid,jdbcType=CHAR},
+      CAUSE_CODE = #{causeCode,jdbcType=VARCHAR},
+      OPERATE_CODE = #{operateCode,jdbcType=VARCHAR},
+      GMT_BEGIN = #{gmtBegin,jdbcType=TIMESTAMP},
+      GMT_END = #{gmtEnd,jdbcType=TIMESTAMP},
+      PRIORITY = #{priority,jdbcType=INTEGER},
+      RISK_WEIGHT = #{riskWeight,jdbcType=REAL},
+      GMT_CREATE = #{gmtCreate,jdbcType=TIMESTAMP},
+      GMT_MODIFIED = #{gmtModified,jdbcType=TIMESTAMP},
+      DISPLAY_ORDER = #{displayOrder,jdbcType=INTEGER},
+      FK_POLICY_UUID = #{fkPolicyUuid,jdbcType=CHAR},
+      TEMPLATE = #{template,jdbcType=VARCHAR},
+      PARENT_UUID = #{parentUuid,jdbcType=VARCHAR},
+      IF_CLAUSE = #{ifClause,jdbcType=VARCHAR},
+      WEIGHT_RATIO = #{weightRatio,jdbcType=REAL},
+      WEIGHT_INDEX = #{weightIndex,jdbcType=CHAR},
+      TEST_RUN = #{testRun,jdbcType=CHAR},
+      APPLY_STATUS = #{applyStatus,jdbcType=VARCHAR},
+      APPLY_TYPE = #{applyType,jdbcType=VARCHAR},
+      FK_DEAL_TYPE_UUID = #{fkDealTypeUuid,jdbcType=VARCHAR},
+      CUSTOM_ID = #{customId,jdbcType=VARCHAR},
+      PHONES = #{phones,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

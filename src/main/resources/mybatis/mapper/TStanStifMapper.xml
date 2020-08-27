@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tongdun.data.mapper.pgqk.user.TStanStifDao">
+	
+	
+	<select id="getCountByMap" resultType="String" parameterType="java.util.Map">
+		SELECT
+			count(1)
+		FROM
+			cp_us_qk_trans_info AS qkTrans
+		LEFT JOIN cp_us_qk_user AS qkUser ON (
+			qkTrans.qk_merchant_no = qkUser.merchant_no
+		)
+		WHERE qkTrans.create_time> #{start}::timestamp and qkTrans.create_time&lt;= #{end}::timestamp
+		AND (qkTrans.trans_source_type=1 or qkTrans.trans_source_type=2)
+	</select>
+	
+	<select id="queryByParamMaps" parameterType="java.util.Map" resultType="java.util.Map">
+		SELECT
+			qkTrans.trans_mobile_cipher As account_mobile,
+			qkTrans.trans_account_name As account_name,
+			qkTrans.trans_id_card_no_cipher As id_number,
+			qkTrans.source_order_no As order_no,
+			qkTrans.res_msg As res_msg,
+			qkTrans.card_type As card_type,
+			qkTrans.create_time As create_time,
+			qkUser.bank_account_no_cipher As bank_account_no_cipher,
+			qkUser.bank_sub_name As bank_sub_name,
+			qkUser.account_uuid As account_uuid,
+			
+			qkTrans.channel_res_code AS channel_res_code,
+			qkTrans.channel_res_msg AS channel_res_msg,
+			qkTrans.qk_channel_code AS qk_channel_code,
+			qkTrans.qk_merchant_no AS ctif_id,
+			qkTrans.trans_source_type AS trans_source_type,
+			'1' AS ctif_tp,
+			'2' AS client_tp,
+			qkTrans.qk_merchant_no AS smid,
+			qkUser.real_name AS ctnm,
+			'11' AS citp,
+			qkUser.id_card_no_cipher AS ctid,
+			'02' AS cbat,
+			qkTrans.trans_bank_card_no_cipher AS cbac,
+			qkTrans.bank_abbr AS cabm,
+			'02' AS ctat,
+			qkTrans.trans_bank_card_no_cipher AS ctac,
+			'北京畅捷通支付技术有限公司' AS cpin,
+			'210401370' AS cpba,
+			'中国人民银行营业处' AS cpbn,
+			qkTrans.trx_source_ip AS ctip,
+			to_char(
+				qkTrans.create_time,
+				'yyyyMMddHHmmss'
+			) AS tstm,
+			'0100' AS cttp,
+			'01' AS tsdr,
+			'CNY' AS crtp,
+			to_char(qkTrans.trans_amount, '99999999999999999990D99')AS crat,
+			qkTrans.channel_order_no AS bptc,
+			qkTrans.order_no AS pmtc,
+			qkTrans.order_no AS ticd,
+			'01' AS busi_type,
+			'A20' AS trans_type,
+			qkTrans.trans_status AS trans_stat,
+			's1' AS mer_unit,
+			'0' AS iofg,
+			'39' AS trans_channel,
+			'11' AS tran_flag,
+			qkTrans.trace_no AS trans_order,
+			NULL AS tsmi,
+			NULL AS trans_cst_type,
+			NULL AS citp_ori,
+			NULL AS citp_nt,
+			NULL AS crpp,
+			NULL AS tcif_id,
+			NULL AS tcnm,
+			NULL AS tcit,
+			NULL AS tcit_ori,
+			NULL AS tcit_nt,
+			NULL AS tcid,
+			NULL AS tcat,
+			NULL AS tcba,
+			NULL AS tcbn,
+			NULL AS tctt,
+			NULL AS tcta,
+			NULL AS tcpn,
+			NULL AS tcpa,
+			NULL AS tpbn,
+			NULL AS tcip,
+			NULL AS tmnm,
+			NULL AS pos_dev_id,
+			NULL AS bank_stat,
+			NULL AS mer_prov,
+			NULL AS mer_area,
+			NULL AS pos_prov,
+			NULL AS pos_area,
+			NULL AS extend1,
+			NULL AS rate_rmb,
+			NULL AS rate_usa,
+			NULL AS ctmac,
+			NULL AS balance,
+			NULL AS acc_flag,
+			NULL AS ctid_edt
+		
+		FROM
+			cp_us_qk_trans_info AS qkTrans
+		LEFT JOIN cp_us_qk_user AS qkUser ON (
+			qkTrans.qk_merchant_no = qkUser.merchant_no
+		)
+		WHERE qkTrans.create_time> #{start}::timestamp and qkTrans.create_time&lt;= #{end}::timestamp 
+		AND (qkTrans.trans_source_type=1 or qkTrans.trans_source_type=2)
+	</select>
+	
+</mapper>

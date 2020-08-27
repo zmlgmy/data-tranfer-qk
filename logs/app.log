@@ -1,0 +1,163 @@
+[2019-12-04 10:23:00] [INFO ] [com.tongdun.data.Application:48]-- Starting Application on LAPTOP-NQ94O450 with PID 19324 (D:\data-transfer-qk\target\classes started by lwcxx in D:\data-transfer-qk)
+[2019-12-04 10:23:00] [INFO ] [com.tongdun.data.Application:637]-- No active profile set, falling back to default profiles: default
+[2019-12-04 10:23:00] [INFO ] [org.hibernate.validator.internal.util.Version:30]-- HV000001: Hibernate Validator 5.3.4.Final
+[2019-12-04 10:23:00] [INFO ] [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext:582]-- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@20435c40: startup date [Wed Dec 04 10:23:00 CST 2019]; root of context hierarchy
+[2019-12-04 10:23:01] [INFO ] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader:317]-- Loading XML bean definitions from class path resource [META-INF/spring/mns-client-bean.xml]
+[2019-12-04 10:23:01] [INFO ] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325]-- Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-04 10:23:01] [INFO ] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325]-- Bean 'validator' of type [class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-04 10:23:01] [INFO ] [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325]-- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a810e18c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer:89]-- Tomcat initialized with port(s): 8042 (http)
+[2019-12-04 10:23:02] [INFO ] [org.apache.catalina.core.StandardService:179]-- Starting service Tomcat
+[2019-12-04 10:23:02] [INFO ] [org.apache.catalina.core.StandardEngine:179]-- Starting Servlet Engine: Apache Tomcat/8.5.11
+[2019-12-04 10:23:02] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:179]-- Initializing Spring embedded WebApplicationContext
+[2019-12-04 10:23:02] [INFO ] [org.springframework.web.context.ContextLoader:276]-- Root WebApplicationContext: initialization completed in 1621 ms
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.web.servlet.ServletRegistrationBean:190]-- Mapping servlet: 'dispatcherServlet' to [/]
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.web.servlet.FilterRegistrationBean:258]-- Mapping filter: 'metricsFilter' to: [/*]
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.web.servlet.FilterRegistrationBean:258]-- Mapping filter: 'characterEncodingFilter' to: [/*]
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.web.servlet.FilterRegistrationBean:258]-- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.web.servlet.FilterRegistrationBean:258]-- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.web.servlet.FilterRegistrationBean:258]-- Mapping filter: 'requestContextFilter' to: [/*]
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.web.servlet.FilterRegistrationBean:258]-- Mapping filter: 'webRequestLoggingFilter' to: [/*]
+[2019-12-04 10:23:02] [INFO ] [org.springframework.boot.web.servlet.FilterRegistrationBean:258]-- Mapping filter: 'applicationContextIdFilter' to: [/*]
+[2019-12-04 10:23:02] [INFO ] [com.tongdun.data.database.PgQkUserSourceConfig:74]-- 加载qk_postgresql数据库连接~~~~~~~~~~~~~~~
+[2019-12-04 10:23:03] [INFO ] [com.tongdun.data.queue.DataBlockingQueue:35]-- 创建
+[2019-12-04 10:23:03] [INFO ] [com.tongdun.data.queue.FailedDataBlockingQueue:36]-- 创建
+[2019-12-04 10:23:03] [INFO ] [com.tongdun.data.database.KratosDataSourceConfig:72]-- 加载kratos_mysql数据库连接~~~~~~~~~~~~~~~
+[2019-12-04 10:23:04] [INFO ] [com.tongdun.data.database.PgQkAccountSourceConfig:74]-- 加载qk_postgresql_acc数据库连接~~~~~~~~~~~~~~~
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534]-- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@20435c40: startup date [Wed Dec 04 10:23:00 CST 2019]; root of context hierarchy
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:543]-- Mapped "{[/getCount]}" onto public java.lang.String com.tongdun.data.controler.UserController.getCountByStif()
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:543]-- Mapped "{[/getUsersList]}" onto public void com.tongdun.data.controler.UserController.getUsersList()
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:543]-- Mapped "{[/getStifList]}" onto public java.util.List<java.util.Map<java.lang.String, java.lang.Object>> com.tongdun.data.controler.UserController.getStifList()
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:543]-- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:543]-- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping:354]-- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping:354]-- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2019-12-04 10:23:04] [INFO ] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping:354]-- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest)
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping:543]-- Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+[2019-12-04 10:23:05] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:431]-- Registering beans for JMX exposure on startup
+[2019-12-04 10:23:05] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:916]-- Bean with name 'kratosDataSource' has been autodetected for JMX exposure
+[2019-12-04 10:23:05] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:916]-- Bean with name 'pgQkAccSource' has been autodetected for JMX exposure
+[2019-12-04 10:23:05] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:916]-- Bean with name 'pgQkUserSource' has been autodetected for JMX exposure
+[2019-12-04 10:23:05] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:671]-- Located MBean 'kratosDataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=kratosDataSource,type=DruidDataSource]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:671]-- Located MBean 'pgQkAccSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=pgQkAccSource,type=DruidDataSource]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:671]-- Located MBean 'pgQkUserSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=pgQkUserSource,type=DruidDataSource]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:431]-- Registering beans for JMX exposure on startup
+[2019-12-04 10:23:05] [INFO ] [org.springframework.context.support.DefaultLifecycleProcessor:341]-- Starting beans in phase 0
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'auditEventsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=auditEventsEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'loggersEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=loggersEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'autoConfigurationReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:678]-- Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:152]-- 历史数据Map信息：{database=pay,remit, start=2019-04-8 00:00:00, end=2019-04-9 00:00:00}
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:82]-- 实时数据Map信息--钱客/店小友：{database=pay,remit}
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:102]-- 定时任务开始扫表,开始时间:2019-12-04 10:13:00,结束时间:2019-12-04 10:18:00
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:251]-- 实时数据参数信息：threadName=Reader-Ontime-Thread-1,param{database=pay,remit, start=2019-12-04 10:13:00, end=2019-12-04 10:18:00}
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：2ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:23:05] [INFO ] [org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor:260]-- No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+[2019-12-04 10:23:05] [INFO ] [org.apache.coyote.http11.Http11NioProtocol:179]-- Initializing ProtocolHandler ["http-nio-8042"]
+[2019-12-04 10:23:05] [INFO ] [org.apache.coyote.http11.Http11NioProtocol:179]-- Starting ProtocolHandler [http-nio-8042]
+[2019-12-04 10:23:05] [INFO ] [org.apache.tomcat.util.net.NioSelectorPool:179]-- Using a shared selector for servlet write/read
+[2019-12-04 10:23:05] [INFO ] [com.alibaba.druid.pool.DruidDataSource:848]-- {dataSource-1} inited
+[2019-12-04 10:23:05] [INFO ] [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer:192]-- Tomcat started on port(s): 8042 (http)
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.Application:57]-- Started Application in 5.736 seconds (JVM running for 8.238)
+[2019-12-04 10:23:05] [INFO ] [com.tongdun.data.Application:23]-- SpringBoot Start Success
+[2019-12-04 10:23:06] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:261]-- 开始读取准实时数据,查询开始时间2019-12-04 10:13:00,结束时间2019-12-04 10:18:00,dataBase:pay,remit,查询总数0
+[2019-12-04 10:23:06] [INFO ] [com.tongdun.data.utils.WorkerUtil:110]-- 开始时间:2019-12-04 10:13:00，结束时间:2019-12-04 10:18:00,耗时:52ms，查询数据0条
+[2019-12-04 10:23:06] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:274]-- 准实时数据读取完成,共消耗52ms
+[2019-12-04 10:23:06] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:251]-- 实时数据参数信息：threadName=Reader-Ontime-Thread-1,param{database=pay,remit, start=2019-12-04 10:13:00, end=2019-12-04 10:18:00}
+[2019-12-04 10:23:06] [INFO ] [com.alibaba.druid.pool.DruidDataSource:848]-- {dataSource-2} inited
+[2019-12-04 10:23:07] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:261]-- 开始读取准实时数据,查询开始时间2019-12-04 10:13:00,结束时间2019-12-04 10:18:00,dataBase:pay,remit,查询总数0
+[2019-12-04 10:23:07] [INFO ] [com.tongdun.data.utils.WorkerUtil:110]-- 开始时间:2019-12-04 10:13:00，结束时间:2019-12-04 10:18:00,耗时:28ms，查询数据0条
+[2019-12-04 10:23:07] [INFO ] [com.tongdun.data.listener.ApplicationStartupListener:274]-- 准实时数据读取完成,共消耗28ms
+[2019-12-04 10:23:07] [INFO ] [com.alibaba.druid.pool.DruidDataSource:848]-- {dataSource-3} inited
+[2019-12-04 10:23:15] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：10004ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:23:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:23:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:23:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:23:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:23:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:23:25] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：20005ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:23:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:23:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:23:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:23:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:23:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:23:35] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：30005ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:23:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:23:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:23:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:23:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:23:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:23:45] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：40006ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:23:45] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:23:45] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:23:45] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:23:45] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:23:45] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:23:55] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：50006ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:23:55] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:23:55] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:23:55] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:23:55] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:23:55] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:24:05] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：60007ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:24:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:24:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:24:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:24:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:24:05] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:24:15] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：70009ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:24:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:24:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:24:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:24:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:24:15] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:24:25] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：80012ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:24:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:24:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:24:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:24:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:24:25] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:24:35] [INFO ] [com.tongdun.data.worker.Listener:39]-- 应用启动时间：90014ms,总共0条数据，已读取0条,已消费0条,队列中包含:0条,失败0条，读取消耗0s,写消耗0s
+[2019-12-04 10:24:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-1,状态WAITING
+[2019-12-04 10:24:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-2,状态WAITING
+[2019-12-04 10:24:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-3,状态WAITING
+[2019-12-04 10:24:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-4,状态WAITING
+[2019-12-04 10:24:35] [INFO ] [com.tongdun.data.utils.WorkerUtil:68]-- 线程Writer-Thread-0,状态WAITING
+[2019-12-04 10:24:42] [INFO ] [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext:987]-- Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@20435c40: startup date [Wed Dec 04 10:23:00 CST 2019]; root of context hierarchy
+[2019-12-04 10:24:42] [INFO ] [org.springframework.context.support.DefaultLifecycleProcessor:356]-- Stopping beans in phase 0
+[2019-12-04 10:24:42] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:449]-- Unregistering JMX-exposed beans on shutdown
+[2019-12-04 10:24:42] [INFO ] [org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter:241]-- Unregistering JMX-exposed beans
+[2019-12-04 10:24:42] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:449]-- Unregistering JMX-exposed beans on shutdown
+[2019-12-04 10:24:42] [INFO ] [org.springframework.jmx.export.annotation.AnnotationMBeanExporter:241]-- Unregistering JMX-exposed beans
+[2019-12-04 10:24:42] [INFO ] [com.alibaba.druid.pool.DruidDataSource:1609]-- {dataSource-2} closed
+[2019-12-04 10:24:42] [INFO ] [com.alibaba.druid.pool.DruidDataSource:1609]-- {dataSource-1} closed
+[2019-12-04 10:24:42] [INFO ] [com.alibaba.druid.pool.DruidDataSource:1609]-- {dataSource-3} closed

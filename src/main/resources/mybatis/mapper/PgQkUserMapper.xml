@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tongdun.data.mapper.pgqk.user.PgQkUserMapper">
+	<resultMap id="BaseResultMap"
+		type="com.tongdun.data.entity.PgQkUser">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="user_uuid" jdbcType="OTHER" property="userUuid" />
+		<result column="account_uuid" jdbcType="OTHER"
+			property="accountUuid" />
+		<result column="merchant_no" jdbcType="VARCHAR"
+			property="merchantNo" />
+		<result column="real_name" jdbcType="VARCHAR"
+			property="realName" />
+		<result column="company_name" jdbcType="VARCHAR"
+			property="companyName" />
+		<result column="company_abbr" jdbcType="VARCHAR"
+			property="companyAbbr" />
+		<result column="user_class" jdbcType="INTEGER"
+			property="userClass" />
+		<result column="user_grade" jdbcType="VARCHAR"
+			property="userGrade" />
+		<result column="is_post" jdbcType="INTEGER" property="isPost" />
+		<result column="post_time" jdbcType="TIMESTAMP"
+			property="postTime" />
+		<result column="req_flow_no" jdbcType="VARCHAR"
+			property="reqFlowNo" />
+		<result column="qk_server_provider_id" jdbcType="BIGINT"
+			property="qkServerProviderId" />
+		<result column="id_card_no_cipher" jdbcType="VARCHAR"
+			property="idCardNoCipher" />
+		<result column="id_card_no_mask" jdbcType="VARCHAR"
+			property="idCardNoMask" />
+		<result column="bank_account_no_mask" jdbcType="VARCHAR"
+			property="bankAccountNoMask" />
+		<result column="bank_account_no_cipher" jdbcType="VARCHAR"
+			property="bankAccountNoCipher" />
+		<result column="bank_account_name" jdbcType="VARCHAR"
+			property="bankAccountName" />
+		<result column="bank_account_type" jdbcType="INTEGER"
+			property="bankAccountType" />
+		<result column="bank_code" jdbcType="VARCHAR"
+			property="bankCode" />
+		<result column="bank_province" jdbcType="VARCHAR"
+			property="bankProvince" />
+		<result column="bank_province_code" jdbcType="VARCHAR"
+			property="bankProvinceCode" />
+		<result column="bank_city" jdbcType="VARCHAR"
+			property="bankCity" />
+		<result column="bank_city_code" jdbcType="VARCHAR"
+			property="bankCityCode" />
+		<result column="bank_name" jdbcType="VARCHAR"
+			property="bankName" />
+		<result column="bank_sub_name" jdbcType="VARCHAR"
+			property="bankSubName" />
+		<result column="bank_channel_no" jdbcType="VARCHAR"
+			property="bankChannelNo" />
+		<result column="email" jdbcType="VARCHAR" property="email" />
+		<result column="sett_type" jdbcType="INTEGER"
+			property="settType" />
+		<result column="sett_day" jdbcType="INTEGER" property="settDay" />
+		<result column="is_agent" jdbcType="INTEGER" property="isAgent" />
+		<result column="is_self_sett_mode" jdbcType="INTEGER"
+			property="isSelfSettMode" />
+		<result column="create_time" jdbcType="TIMESTAMP"
+			property="createTime" />
+		<result column="delete_status" jdbcType="INTEGER"
+			property="deleteStatus" />
+		<result column="mobile_cipher" jdbcType="VARCHAR"
+			property="mobileCipher" />
+		<result column="mobile_mask" jdbcType="VARCHAR"
+			property="mobileMask" />
+		<result column="qk_seller1_id" jdbcType="BIGINT"
+			property="qkSeller1Id" />
+		<result column="qk_seller2_id" jdbcType="BIGINT"
+			property="qkSeller2Id" />
+		<result column="qk_seller3_id" jdbcType="BIGINT"
+			property="qkSeller3Id" />
+		<result column="qk_seller1_user_code" jdbcType="VARCHAR"
+			property="qkSeller1UserCode" />
+		<result column="qk_seller2_user_code" jdbcType="VARCHAR"
+			property="qkSeller2UserCode" />
+		<result column="qk_seller3_user_code" jdbcType="VARCHAR"
+			property="qkSeller3UserCode" />
+		<result column="qk_server_provider_user_code"
+			jdbcType="VARCHAR" property="qkServerProviderUserCode" />
+		<result column="source_req_flow_no" jdbcType="VARCHAR"
+			property="sourceReqFlowNo" />
+		<result column="user_level" jdbcType="INTEGER"
+			property="userLevel" />
+		<result column="relative_sp_id" jdbcType="BIGINT"
+			property="relativeSpId" />
+		<result column="relative_sp_user_code" jdbcType="VARCHAR"
+			property="relativeSpUserCode" />
+		<result column="parent_sp_info" jdbcType="OTHER"
+			property="parentSpInfo" />
+		<result column="merchant_type" jdbcType="INTEGER"
+			property="merchantType" />
+		<result column="ref_merchant_id" jdbcType="BIGINT"
+			property="refMerchantId" />
+		<result column="ref_merchant_code" jdbcType="VARCHAR"
+			property="refMerchantCode" />
+		<result column="check_status" jdbcType="INTEGER"
+			property="checkStatus" />
+		<result column="similarity_degree" jdbcType="NUMERIC"
+			property="similarityDegree" />
+		<result column="activate_status" jdbcType="INTEGER"
+			property="activateStatus" />
+		<result column="member_level" jdbcType="INTEGER"
+			property="memberLevel" />
+		<result column="syn_rate_time" jdbcType="TIMESTAMP"
+			property="synRateTime" />
+		<result column="syn_limit_time" jdbcType="TIMESTAMP"
+			property="synLimitTime" />
+		<result column="syn_acc_time" jdbcType="TIMESTAMP"
+			property="synAccTime" />
+		<result column="wx_channel_merchant_no" jdbcType="VARCHAR"
+			property="wxChannelMerchantNo" />
+		<result column="wx_insert_res_status" jdbcType="VARCHAR"
+			property="wxInsertResStatus" />
+		<result column="wx_insert_res_code" jdbcType="VARCHAR"
+			property="wxInsertResCode" />
+		<result column="wx_insert_res_message" jdbcType="VARCHAR"
+			property="wxInsertResMessage" />
+		<result column="alipay_channel_merchant_no" jdbcType="VARCHAR"
+			property="alipayChannelMerchantNo" />
+		<result column="alipay_insert_res_status" jdbcType="VARCHAR"
+			property="alipayInsertResStatus" />
+		<result column="alipay_insert_res_code" jdbcType="VARCHAR"
+			property="alipayInsertResCode" />
+		<result column="alipay_insert_res_message" jdbcType="VARCHAR"
+			property="alipayInsertResMessage" />
+		<result column="activate_time" jdbcType="TIMESTAMP"
+			property="activateTime" />
+		<result column="unionpay_qrcode_report_res_code"
+			jdbcType="VARCHAR" property="unionpayQrcodeReportResCode" />
+		<result column="unionpay_qrcode_report_res_msg"
+			jdbcType="VARCHAR" property="unionpayQrcodeReportResMsg" />
+		<result column="unionpay_qrcode_chn_mer_no" jdbcType="VARCHAR"
+			property="unionpayQrcodeChnMerNo" />
+		<result column="address" jdbcType="VARCHAR" property="address" />
+		<result column="legal_person_name" jdbcType="VARCHAR"
+			property="legalPersonName" />
+		<result column="legal_person_id_card_no_mask"
+			jdbcType="VARCHAR" property="legalPersonIdCardNoMask" />
+		<result column="legal_person_id_card_no_cipher"
+			jdbcType="VARCHAR" property="legalPersonIdCardNoCipher" />
+		<result column="detail_address" jdbcType="VARCHAR"
+			property="detailAddress" />
+		<result column="management_range" jdbcType="VARCHAR"
+			property="managementRange" />
+		<result column="business_no" jdbcType="VARCHAR"
+			property="businessNo" />
+		<result column="mcc_code" jdbcType="VARCHAR" property="mccCode" />
+		<result column="com_siteweb" jdbcType="VARCHAR"
+			property="comSiteweb" />
+		<result column="record_license" jdbcType="VARCHAR"
+			property="recordLicense" />
+		<result column="company_city" jdbcType="VARCHAR"
+			property="companyCity" />
+		<result column="company_city_code" jdbcType="VARCHAR"
+			property="companyCityCode" />
+		<result column="company_province" jdbcType="VARCHAR"
+			property="companyProvince" />
+		<result column="company_province_code" jdbcType="VARCHAR"
+			property="companyProvinceCode" />
+		<result column="bank_card_type" jdbcType="INTEGER"
+			property="bankCardType" />
+		<result column="unionpay_quick_chn_mer_no" jdbcType="VARCHAR"
+			property="unionpayQuickChnMerNo" />
+		<result column="unionpay_mer_req_flow_no" jdbcType="VARCHAR"
+			property="unionpayMerReqFlowNo" />
+		<result column="id_card_no_valid_time" jdbcType="VARCHAR"
+			property="idCardNoValidTime" />
+		<result column="id_card_no_address" jdbcType="VARCHAR"
+			property="idCardNoAddress" />
+		<result column="gender" jdbcType="INTEGER" property="gender" />
+		<result column="cn" jdbcType="VARCHAR" property="cn" />
+		<result column="career" jdbcType="VARCHAR" property="career" />
+		<result column="wx_insert_time" jdbcType="TIMESTAMP"
+			property="wxInsertTime" />
+		<result column="alipay_insert_time" jdbcType="TIMESTAMP"
+			property="alipayInsertTime" />
+		<result column="alipay_category" jdbcType="VARCHAR"
+			property="alipayCategory" />
+		<result column="wx_category" jdbcType="VARCHAR"
+			property="wxCategory" />
+		<result column="id_card_no_start_time" jdbcType="TIMESTAMP"
+			property="idCardNoStartTime" />
+		<result column="id_card_no_end_time" jdbcType="TIMESTAMP"
+			property="idCardNoEndTime" />
+		<result column="send_address" jdbcType="VARCHAR"
+			property="sendAddress" />
+		<result column="qrc_mer_chn_mer_no" jdbcType="VARCHAR"
+			property="qrcMerChnMerNo" />
+		<result column="qrc_mer_report_res_code" jdbcType="VARCHAR"
+			property="qrcMerReportResCode" />
+		<result column="qrc_mer_report_res_msg" jdbcType="VARCHAR"
+			property="qrcMerReportResMsg" />
+		<result column="qrc_syn_status" jdbcType="INTEGER"
+			property="qrcSynStatus" />
+		<result column="cup_mer_insert_time" jdbcType="TIMESTAMP"
+			property="cupMerInsertTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, user_uuid, account_uuid, merchant_no, real_name, company_name,
+		company_abbr,
+		user_class, user_grade, is_post, post_time, req_flow_no, qk_server_provider_id,
+		id_card_no_cipher,
+		id_card_no_mask, bank_account_no_mask, bank_account_no_cipher, bank_account_name,
+		bank_account_type, bank_code, bank_province, bank_province_code,
+		bank_city, bank_city_code,
+		bank_name, bank_sub_name, bank_channel_no, email, sett_type, sett_day, is_agent,
+		is_self_sett_mode, create_time, delete_status, mobile_cipher,
+		mobile_mask, qk_seller1_id,
+		qk_seller2_id, qk_seller3_id, qk_seller1_user_code, qk_seller2_user_code,
+		qk_seller3_user_code,
+		qk_server_provider_user_code, source_req_flow_no, user_level, relative_sp_id,
+		relative_sp_user_code,
+		parent_sp_info, merchant_type, ref_merchant_id, ref_merchant_code, check_status,
+		similarity_degree, activate_status, member_level, syn_rate_time,
+		syn_limit_time,
+		syn_acc_time, wx_channel_merchant_no, wx_insert_res_status, wx_insert_res_code,
+		wx_insert_res_message,
+		alipay_channel_merchant_no, alipay_insert_res_status, alipay_insert_res_code,
+		alipay_insert_res_message,
+		activate_time, unionpay_qrcode_report_res_code, unionpay_qrcode_report_res_msg,
+		unionpay_qrcode_chn_mer_no,
+		address, legal_person_name, legal_person_id_card_no_mask,
+		legal_person_id_card_no_cipher,
+		detail_address, management_range, business_no, mcc_code, com_siteweb, record_license,
+		company_city, company_city_code, company_province,
+		company_province_code, bank_card_type,
+		unionpay_quick_chn_mer_no, unionpay_mer_req_flow_no, id_card_no_valid_time, id_card_no_address,
+		gender, cn, career, wx_insert_time, alipay_insert_time,
+		alipay_category, wx_category,
+		id_card_no_start_time, id_card_no_end_time, send_address, qrc_mer_chn_mer_no,
+		qrc_mer_report_res_code,
+		qrc_mer_report_res_msg, qrc_syn_status, cup_mer_insert_time
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from cp_us_qk_user
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+
+	<select id="selectAllByParams" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"></include>
+		from cp_us_qk_user where 1=1 
+		<if test="createTime != null">and to_char(create_time,'yyyy-MM-dd') = #{createTime}</if>
+		limit #{size} offset #{offset}
+	</select>
+
+
+	<select id="selectCountByParams" parameterType="java.util.Map" resultType="java.lang.Integer">
+		select
+		count(1)
+		from cp_us_qk_user
+		where 1=1
+		<if test="createTime != null">and to_char(create_time,'yyyy-MM-dd') = #{createTime}</if>
+	</select>
+
+</mapper>

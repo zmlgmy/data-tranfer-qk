@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tongdun.data.mapper.pgqk.user.QkWithdrawTransDao">
+  <resultMap id="BaseResultMap" type="com.tongdun.data.entity.QkWithdrawTrans">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="qk_seller1_id" jdbcType="BIGINT" property="qkSeller1Id" />
+    <result column="qk_seller2_id" jdbcType="BIGINT" property="qkSeller2Id" />
+    <result column="qk_seller3_id" jdbcType="BIGINT" property="qkSeller3Id" />
+    <result column="qk_sp_id" jdbcType="BIGINT" property="qkSpId" />
+    <result column="qk_seller1_user_code" jdbcType="VARCHAR" property="qkSeller1UserCode" />
+    <result column="qk_seller2_user_code" jdbcType="VARCHAR" property="qkSeller2UserCode" />
+    <result column="qk_seller3_user_code" jdbcType="VARCHAR" property="qkSeller3UserCode" />
+    <result column="qk_sp_user_code" jdbcType="VARCHAR" property="qkSpUserCode" />
+    <result column="merchant_no" jdbcType="VARCHAR" property="merchantNo" />
+    <result column="merchant_user_uuid" jdbcType="OTHER" property="merchantUserUuid" />
+    <result column="merchant_account_uuid" jdbcType="OTHER" property="merchantAccountUuid" />
+    <result column="is_self_card_sett" jdbcType="INTEGER" property="isSelfCardSett" />
+    <result column="bank_card_no_cipher" jdbcType="VARCHAR" property="bankCardNoCipher" />
+    <result column="bank_card_no_mask" jdbcType="VARCHAR" property="bankCardNoMask" />
+    <result column="bank_account_name" jdbcType="VARCHAR" property="bankAccountName" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="bank_sub_name" jdbcType="VARCHAR" property="bankSubName" />
+    <result column="bank_channel_no" jdbcType="VARCHAR" property="bankChannelNo" />
+    <result column="client_no" jdbcType="VARCHAR" property="clientNo" />
+    <result column="req_flow_no" jdbcType="VARCHAR" property="reqFlowNo" />
+    <result column="source_req_flow_no" jdbcType="VARCHAR" property="sourceReqFlowNo" />
+    <result column="wallet_type" jdbcType="INTEGER" property="walletType" />
+    <result column="risk_day" jdbcType="INTEGER" property="riskDay" />
+    <result column="withdraw_amount" jdbcType="NUMERIC" property="withdrawAmount" />
+    <result column="merchant_withdraw_rate" jdbcType="NUMERIC" property="merchantWithdrawRate" />
+    <result column="merchant_withdraw_single_fee" jdbcType="NUMERIC" property="merchantWithdrawSingleFee" />
+    <result column="merchant_withdraw_fee" jdbcType="NUMERIC" property="merchantWithdrawFee" />
+    <result column="merchant_receive_amount" jdbcType="NUMERIC" property="merchantReceiveAmount" />
+    <result column="qk_sp_withdraw_rate" jdbcType="NUMERIC" property="qkSpWithdrawRate" />
+    <result column="qk_sp_withdraw_single_fee" jdbcType="NUMERIC" property="qkSpWithdrawSingleFee" />
+    <result column="qk_sp_withdraw_fee" jdbcType="NUMERIC" property="qkSpWithdrawFee" />
+    <result column="qk_sp_withdraw_profit" jdbcType="NUMERIC" property="qkSpWithdrawProfit" />
+    <result column="qk_seller1_withdraw_rate" jdbcType="NUMERIC" property="qkSeller1WithdrawRate" />
+    <result column="qk_seller1_withdraw_single_fee" jdbcType="NUMERIC" property="qkSeller1WithdrawSingleFee" />
+    <result column="qk_seller1_withdraw_fee" jdbcType="NUMERIC" property="qkSeller1WithdrawFee" />
+    <result column="qk_seller1_withdraw_profit" jdbcType="NUMERIC" property="qkSeller1WithdrawProfit" />
+    <result column="qk_seller2_withdraw_rate" jdbcType="NUMERIC" property="qkSeller2WithdrawRate" />
+    <result column="qk_seller2_withdraw_single_fee" jdbcType="NUMERIC" property="qkSeller2WithdrawSingleFee" />
+    <result column="qk_seller2_withdraw_fee" jdbcType="NUMERIC" property="qkSeller2WithdrawFee" />
+    <result column="qk_seller2_withdraw_profit" jdbcType="NUMERIC" property="qkSeller2WithdrawProfit" />
+    <result column="qk_seller3_withdraw_rate" jdbcType="NUMERIC" property="qkSeller3WithdrawRate" />
+    <result column="qk_seller3_withdraw_single_fee" jdbcType="NUMERIC" property="qkSeller3WithdrawSingleFee" />
+    <result column="qk_seller3_withdraw_fee" jdbcType="NUMERIC" property="qkSeller3WithdrawFee" />
+    <result column="qk_seller3_withdraw_profit" jdbcType="NUMERIC" property="qkSeller3WithdrawProfit" />
+    <result column="is_qk_sp_post" jdbcType="INTEGER" property="isQkSpPost" />
+    <result column="is_qk_seller1_post" jdbcType="INTEGER" property="isQkSeller1Post" />
+    <result column="is_qk_seller2_post" jdbcType="INTEGER" property="isQkSeller2Post" />
+    <result column="is_qk_seller3_post" jdbcType="INTEGER" property="isQkSeller3Post" />
+    <result column="qk_sp_post_time" jdbcType="TIMESTAMP" property="qkSpPostTime" />
+    <result column="qk_seller1_post_time" jdbcType="TIMESTAMP" property="qkSeller1PostTime" />
+    <result column="qk_seller2_post_time" jdbcType="TIMESTAMP" property="qkSeller2PostTime" />
+    <result column="qk_seller3_post_time" jdbcType="TIMESTAMP" property="qkSeller3PostTime" />
+    <result column="remit_type" jdbcType="INTEGER" property="remitType" />
+    <result column="remit_status" jdbcType="INTEGER" property="remitStatus" />
+    <result column="remit_req_time" jdbcType="TIMESTAMP" property="remitReqTime" />
+    <result column="remit_finish_time" jdbcType="TIMESTAMP" property="remitFinishTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="qk_sp_sett_status" jdbcType="INTEGER" property="qkSpSettStatus" />
+    <result column="qk_seller1_sett_status" jdbcType="INTEGER" property="qkSeller1SettStatus" />
+    <result column="qk_seller2_sett_status" jdbcType="INTEGER" property="qkSeller2SettStatus" />
+    <result column="qk_seller3_sett_status" jdbcType="INTEGER" property="qkSeller3SettStatus" />
+    <result column="qk_sp_sett_time" jdbcType="TIMESTAMP" property="qkSpSettTime" />
+    <result column="qk_seller1_sett_time" jdbcType="TIMESTAMP" property="qkSeller1SettTime" />
+    <result column="qk_seller2_sett_time" jdbcType="TIMESTAMP" property="qkSeller2SettTime" />
+    <result column="qk_seller3_sett_time" jdbcType="TIMESTAMP" property="qkSeller3SettTime" />
+    <result column="delete_status" jdbcType="INTEGER" property="deleteStatus" />
+    <result column="trans_source_type" jdbcType="INTEGER" property="transSourceType" />
+    <result column="all_sp_rate_info" jdbcType="OTHER" property="allSpRateInfo" />
+    <result column="is_hsy_cal" jdbcType="INTEGER" property="isHsyCal" />
+    <result column="hsy_cal_time" jdbcType="TIMESTAMP" property="hsyCalTime" />
+    <result column="trans_user_type" jdbcType="INTEGER" property="transUserType" />
+    <result column="withdraw_failed_reason" jdbcType="VARCHAR" property="withdrawFailedReason" />
+    <result column="bank_card_type" jdbcType="INTEGER" property="bankCardType" />
+    <result column="business_check_flag" jdbcType="INTEGER" property="businessCheckFlag" />
+    <result column="remit_channel_no" jdbcType="VARCHAR" property="remitChannelNo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, qk_seller1_id, qk_seller2_id, qk_seller3_id, qk_sp_id, qk_seller1_user_code, 
+    qk_seller2_user_code, qk_seller3_user_code, qk_sp_user_code, merchant_no, merchant_user_uuid, 
+    merchant_account_uuid, is_self_card_sett, bank_card_no_cipher, bank_card_no_mask, 
+    bank_account_name, bank_name, bank_sub_name, bank_channel_no, client_no, req_flow_no, 
+    source_req_flow_no, wallet_type, risk_day, withdraw_amount, merchant_withdraw_rate, 
+    merchant_withdraw_single_fee, merchant_withdraw_fee, merchant_receive_amount, qk_sp_withdraw_rate, 
+    qk_sp_withdraw_single_fee, qk_sp_withdraw_fee, qk_sp_withdraw_profit, qk_seller1_withdraw_rate, 
+    qk_seller1_withdraw_single_fee, qk_seller1_withdraw_fee, qk_seller1_withdraw_profit, 
+    qk_seller2_withdraw_rate, qk_seller2_withdraw_single_fee, qk_seller2_withdraw_fee, 
+    qk_seller2_withdraw_profit, qk_seller3_withdraw_rate, qk_seller3_withdraw_single_fee, 
+    qk_seller3_withdraw_fee, qk_seller3_withdraw_profit, is_qk_sp_post, is_qk_seller1_post, 
+    is_qk_seller2_post, is_qk_seller3_post, qk_sp_post_time, qk_seller1_post_time, qk_seller2_post_time, 
+    qk_seller3_post_time, remit_type, remit_status, remit_req_time, remit_finish_time, 
+    create_time, qk_sp_sett_status, qk_seller1_sett_status, qk_seller2_sett_status, qk_seller3_sett_status, 
+    qk_sp_sett_time, qk_seller1_sett_time, qk_seller2_sett_time, qk_seller3_sett_time, 
+    delete_status, trans_source_type, all_sp_rate_info, is_hsy_cal, hsy_cal_time, trans_user_type, 
+    withdraw_failed_reason, bank_card_type, business_check_flag, remit_channel_no
+  </sql>
+  
+  <select id="getCountByMap" resultType="String" parameterType="java.util.Map">
+		SELECT
+			count(1)
+		FROM
+			cp_us_qk_withdraw_deposit_trans qkTrans
+		LEFT JOIN cp_us_qk_user AS qkUser ON (
+			qkTrans.merchant_no = qkUser.merchant_no
+		)
+		WHERE qkTrans.create_time> #{start}::timestamp and qkTrans.create_time &lt;=  #{end}::timestamp 
+		AND (qkTrans.trans_source_type=1 or qkTrans.trans_source_type=2)
+  </select>
+  
+  <select id="queryByParamMaps" parameterType="java.util.Map" resultType="java.util.Map">
+	  SELECT 
+		qkWdt.merchant_no,
+		qkWdt.merchant_account_uuid,
+		qkUser.real_name,
+		qkUser.company_name,
+		qkWdt.bank_card_no_cipher,
+		qkWdt.bank_name,
+		'' as trade_code, 
+		qkWdt.withdraw_amount,
+		qkWdt.req_flow_no,
+		qkWdt.remit_status,
+		qkWdt.withdraw_failed_reason,
+		qkWdt.create_time,
+		qkWdt.source_req_flow_no,
+		qkWdt.trans_source_type,
+		qkUser.id_card_no_cipher,
+		qkUser.mobile_cipher
+		
+	FROM cp_us_qk_withdraw_deposit_trans qkWdt 
+	LEFT JOIN cp_us_qk_user qkUser ON (
+	   qkWdt.merchant_no = qkUser.merchant_no
+	)
+	  WHERE qkWdt.create_time> #{start}::timestamp and qkWdt.create_time&lt;= #{end}::timestamp
+	  AND (qkWdt.trans_source_type=1 or qkWdt.trans_source_type=2)
+  </select>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cp_us_qk_withdraw_deposit_trans
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cp_us_qk_withdraw_deposit_trans
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.tongdun.data.entity.QkWithdrawTrans">
+    insert into cp_us_qk_withdraw_deposit_trans (id, qk_seller1_id, qk_seller2_id, 
+      qk_seller3_id, qk_sp_id, qk_seller1_user_code, 
+      qk_seller2_user_code, qk_seller3_user_code, qk_sp_user_code, 
+      merchant_no, merchant_user_uuid, merchant_account_uuid, 
+      is_self_card_sett, bank_card_no_cipher, bank_card_no_mask, 
+      bank_account_name, bank_name, bank_sub_name, 
+      bank_channel_no, client_no, req_flow_no, 
+      source_req_flow_no, wallet_type, risk_day, 
+      withdraw_amount, merchant_withdraw_rate, merchant_withdraw_single_fee, 
+      merchant_withdraw_fee, merchant_receive_amount, 
+      qk_sp_withdraw_rate, qk_sp_withdraw_single_fee, 
+      qk_sp_withdraw_fee, qk_sp_withdraw_profit, qk_seller1_withdraw_rate, 
+      qk_seller1_withdraw_single_fee, qk_seller1_withdraw_fee, 
+      qk_seller1_withdraw_profit, qk_seller2_withdraw_rate, 
+      qk_seller2_withdraw_single_fee, qk_seller2_withdraw_fee, 
+      qk_seller2_withdraw_profit, qk_seller3_withdraw_rate, 
+      qk_seller3_withdraw_single_fee, qk_seller3_withdraw_fee, 
+      qk_seller3_withdraw_profit, is_qk_sp_post, is_qk_seller1_post, 
+      is_qk_seller2_post, is_qk_seller3_post, qk_sp_post_time, 
+      qk_seller1_post_time, qk_seller2_post_time, 
+      qk_seller3_post_time, remit_type, remit_status, 
+      remit_req_time, remit_finish_time, create_time, 
+      qk_sp_sett_status, qk_seller1_sett_status, qk_seller2_sett_status, 
+      qk_seller3_sett_status, qk_sp_sett_time, qk_seller1_sett_time, 
+      qk_seller2_sett_time, qk_seller3_sett_time, 
+      delete_status, trans_source_type, all_sp_rate_info, 
+      is_hsy_cal, hsy_cal_time, trans_user_type, 
+      withdraw_failed_reason, bank_card_type, business_check_flag, 
+      remit_channel_no)
+    values (#{id,jdbcType=BIGINT}, #{qkSeller1Id,jdbcType=BIGINT}, #{qkSeller2Id,jdbcType=BIGINT}, 
+      #{qkSeller3Id,jdbcType=BIGINT}, #{qkSpId,jdbcType=BIGINT}, #{qkSeller1UserCode,jdbcType=VARCHAR}, 
+      #{qkSeller2UserCode,jdbcType=VARCHAR}, #{qkSeller3UserCode,jdbcType=VARCHAR}, #{qkSpUserCode,jdbcType=VARCHAR}, 
+      #{merchantNo,jdbcType=VARCHAR}, #{merchantUserUuid,jdbcType=OTHER}, #{merchantAccountUuid,jdbcType=OTHER}, 
+      #{isSelfCardSett,jdbcType=INTEGER}, #{bankCardNoCipher,jdbcType=VARCHAR}, #{bankCardNoMask,jdbcType=VARCHAR}, 
+      #{bankAccountName,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}, #{bankSubName,jdbcType=VARCHAR}, 
+      #{bankChannelNo,jdbcType=VARCHAR}, #{clientNo,jdbcType=VARCHAR}, #{reqFlowNo,jdbcType=VARCHAR}, 
+      #{sourceReqFlowNo,jdbcType=VARCHAR}, #{walletType,jdbcType=INTEGER}, #{riskDay,jdbcType=INTEGER}, 
+      #{withdrawAmount,jdbcType=NUMERIC}, #{merchantWithdrawRate,jdbcType=NUMERIC}, #{merchantWithdrawSingleFee,jdbcType=NUMERIC}, 
+      #{merchantWithdrawFee,jdbcType=NUMERIC}, #{merchantReceiveAmount,jdbcType=NUMERIC}, 
+      #{qkSpWithdrawRate,jdbcType=NUMERIC}, #{qkSpWithdrawSingleFee,jdbcType=NUMERIC}, 
+      #{qkSpWithdrawFee,jdbcType=NUMERIC}, #{qkSpWithdrawProfit,jdbcType=NUMERIC}, #{qkSeller1WithdrawRate,jdbcType=NUMERIC}, 
+      #{qkSeller1WithdrawSingleFee,jdbcType=NUMERIC}, #{qkSeller1WithdrawFee,jdbcType=NUMERIC}, 
+      #{qkSeller1WithdrawProfit,jdbcType=NUMERIC}, #{qkSeller2WithdrawRate,jdbcType=NUMERIC}, 
+      #{qkSeller2WithdrawSingleFee,jdbcType=NUMERIC}, #{qkSeller2WithdrawFee,jdbcType=NUMERIC}, 
+      #{qkSeller2WithdrawProfit,jdbcType=NUMERIC}, #{qkSeller3WithdrawRate,jdbcType=NUMERIC}, 
+      #{qkSeller3WithdrawSingleFee,jdbcType=NUMERIC}, #{qkSeller3WithdrawFee,jdbcType=NUMERIC}, 
+      #{qkSeller3WithdrawProfit,jdbcType=NUMERIC}, #{isQkSpPost,jdbcType=INTEGER}, #{isQkSeller1Post,jdbcType=INTEGER}, 
+      #{isQkSeller2Post,jdbcType=INTEGER}, #{isQkSeller3Post,jdbcType=INTEGER}, #{qkSpPostTime,jdbcType=TIMESTAMP}, 
+      #{qkSeller1PostTime,jdbcType=TIMESTAMP}, #{qkSeller2PostTime,jdbcType=TIMESTAMP}, 
+      #{qkSeller3PostTime,jdbcType=TIMESTAMP}, #{remitType,jdbcType=INTEGER}, #{remitStatus,jdbcType=INTEGER}, 
+      #{remitReqTime,jdbcType=TIMESTAMP}, #{remitFinishTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{qkSpSettStatus,jdbcType=INTEGER}, #{qkSeller1SettStatus,jdbcType=INTEGER}, #{qkSeller2SettStatus,jdbcType=INTEGER}, 
+      #{qkSeller3SettStatus,jdbcType=INTEGER}, #{qkSpSettTime,jdbcType=TIMESTAMP}, #{qkSeller1SettTime,jdbcType=TIMESTAMP}, 
+      #{qkSeller2SettTime,jdbcType=TIMESTAMP}, #{qkSeller3SettTime,jdbcType=TIMESTAMP}, 
+      #{deleteStatus,jdbcType=INTEGER}, #{transSourceType,jdbcType=INTEGER}, #{allSpRateInfo,jdbcType=OTHER}, 
+      #{isHsyCal,jdbcType=INTEGER}, #{hsyCalTime,jdbcType=TIMESTAMP}, #{transUserType,jdbcType=INTEGER}, 
+      #{withdrawFailedReason,jdbcType=VARCHAR}, #{bankCardType,jdbcType=INTEGER}, #{businessCheckFlag,jdbcType=INTEGER}, 
+      #{remitChannelNo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tongdun.data.entity.QkWithdrawTrans">
+    insert into cp_us_qk_withdraw_deposit_trans
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="qkSeller1Id != null">
+        qk_seller1_id,
+      </if>
+      <if test="qkSeller2Id != null">
+        qk_seller2_id,
+      </if>
+      <if test="qkSeller3Id != null">
+        qk_seller3_id,
+      </if>
+      <if test="qkSpId != null">
+        qk_sp_id,
+      </if>
+      <if test="qkSeller1UserCode != null">
+        qk_seller1_user_code,
+      </if>
+      <if test="qkSeller2UserCode != null">
+        qk_seller2_user_code,
+      </if>
+      <if test="qkSeller3UserCode != null">
+        qk_seller3_user_code,
+      </if>
+      <if test="qkSpUserCode != null">
+        qk_sp_user_code,
+      </if>
+      <if test="merchantNo != null">
+        merchant_no,
+      </if>
+      <if test="merchantUserUuid != null">
+        merchant_user_uuid,
+      </if>
+      <if test="merchantAccountUuid != null">
+        merchant_account_uuid,
+      </if>
+      <if test="isSelfCardSett != null">
+        is_self_card_sett,
+      </if>
+      <if test="bankCardNoCipher != null">
+        bank_card_no_cipher,
+      </if>
+      <if test="bankCardNoMask != null">
+        bank_card_no_mask,
+      </if>
+      <if test="bankAccountName != null">
+        bank_account_name,
+      </if>
+      <if test="bankName != null">
+        bank_name,
+      </if>
+      <if test="bankSubName != null">
+        bank_sub_name,
+      </if>
+      <if test="bankChannelNo != null">
+        bank_channel_no,
+      </if>
+      <if test="clientNo != null">
+        client_no,
+      </if>
+      <if test="reqFlowNo != null">
+        req_flow_no,
+      </if>
+      <if test="sourceReqFlowNo != null">
+        source_req_flow_no,
+      </if>
+      <if test="walletType != null">
+        wallet_type,
+      </if>
+      <if test="riskDay != null">
+        risk_day,
+      </if>
+      <if test="withdrawAmount != null">
+        withdraw_amount,
+      </if>
+      <if test="merchantWithdrawRate != null">
+        merchant_withdraw_rate,
+      </if>
+      <if test="merchantWithdrawSingleFee != null">
+        merchant_withdraw_single_fee,
+      </if>
+      <if test="merchantWithdrawFee != null">
+        merchant_withdraw_fee,
+      </if>
+      <if test="merchantReceiveAmount != null">
+        merchant_receive_amount,
+      </if>
+      <if test="qkSpWithdrawRate != null">
+        qk_sp_withdraw_rate,
+      </if>
+      <if test="qkSpWithdrawSingleFee != null">
+        qk_sp_withdraw_single_fee,
+      </if>
+      <if test="qkSpWithdrawFee != null">
+        qk_sp_withdraw_fee,
+      </if>
+      <if test="qkSpWithdrawProfit != null">
+        qk_sp_withdraw_profit,
+      </if>
+      <if test="qkSeller1WithdrawRate != null">
+        qk_seller1_withdraw_rate,
+      </if>
+      <if test="qkSeller1WithdrawSingleFee != null">
+        qk_seller1_withdraw_single_fee,
+      </if>
+      <if test="qkSeller1WithdrawFee != null">
+        qk_seller1_withdraw_fee,
+      </if>
+      <if test="qkSeller1WithdrawProfit != null">
+        qk_seller1_withdraw_profit,
+      </if>
+      <if test="qkSeller2WithdrawRate != null">
+        qk_seller2_withdraw_rate,
+      </if>
+      <if test="qkSeller2WithdrawSingleFee != null">
+        qk_seller2_withdraw_single_fee,
+      </if>
+      <if test="qkSeller2WithdrawFee != null">
+        qk_seller2_withdraw_fee,
+      </if>
+      <if test="qkSeller2WithdrawProfit != null">
+        qk_seller2_withdraw_profit,
+      </if>
+      <if test="qkSeller3WithdrawRate != null">
+        qk_seller3_withdraw_rate,
+      </if>
+      <if test="qkSeller3WithdrawSingleFee != null">
+        qk_seller3_withdraw_single_fee,
+      </if>
+      <if test="qkSeller3WithdrawFee != null">
+        qk_seller3_withdraw_fee,
+      </if>
+      <if test="qkSeller3WithdrawProfit != null">
+        qk_seller3_withdraw_profit,
+      </if>
+      <if test="isQkSpPost != null">
+        is_qk_sp_post,
+      </if>
+      <if test="isQkSeller1Post != null">
+        is_qk_seller1_post,
+      </if>
+      <if test="isQkSeller2Post != null">
+        is_qk_seller2_post,
+      </if>
+      <if test="isQkSeller3Post != null">
+        is_qk_seller3_post,
+      </if>
+      <if test="qkSpPostTime != null">
+        qk_sp_post_time,
+      </if>
+      <if test="qkSeller1PostTime != null">
+        qk_seller1_post_time,
+      </if>
+      <if test="qkSeller2PostTime != null">
+        qk_seller2_post_time,
+      </if>
+      <if test="qkSeller3PostTime != null">
+        qk_seller3_post_time,
+      </if>
+      <if test="remitType != null">
+        remit_type,
+      </if>
+      <if test="remitStatus != null">
+        remit_status,
+      </if>
+      <if test="remitReqTime != null">
+        remit_req_time,
+      </if>
+      <if test="remitFinishTime != null">
+        remit_finish_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="qkSpSettStatus != null">
+        qk_sp_sett_status,
+      </if>
+      <if test="qkSeller1SettStatus != null">
+        qk_seller1_sett_status,
+      </if>
+      <if test="qkSeller2SettStatus != null">
+        qk_seller2_sett_status,
+      </if>
+      <if test="qkSeller3SettStatus != null">
+        qk_seller3_sett_status,
+      </if>
+      <if test="qkSpSettTime != null">
+        qk_sp_sett_time,
+      </if>
+      <if test="qkSeller1SettTime != null">
+        qk_seller1_sett_time,
+      </if>
+      <if test="qkSeller2SettTime != null">
+        qk_seller2_sett_time,
+      </if>
+      <if test="qkSeller3SettTime != null">
+        qk_seller3_sett_time,
+      </if>
+      <if test="deleteStatus != null">
+        delete_status,
+      </if>
+      <if test="transSourceType != null">
+        trans_source_type,
+      </if>
+      <if test="allSpRateInfo != null">
+        all_sp_rate_info,
+      </if>
+      <if test="isHsyCal != null">
+        is_hsy_cal,
+      </if>
+      <if test="hsyCalTime != null">
+        hsy_cal_time,
+      </if>
+      <if test="transUserType != null">
+        trans_user_type,
+      </if>
+      <if test="withdrawFailedReason != null">
+        withdraw_failed_reason,
+      </if>
+      <if test="bankCardType != null">
+        bank_card_type,
+      </if>
+      <if test="businessCheckFlag != null">
+        business_check_flag,
+      </if>
+      <if test="remitChannelNo != null">
+        remit_channel_no,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="qkSeller1Id != null">
+        #{qkSeller1Id,jdbcType=BIGINT},
+      </if>
+      <if test="qkSeller2Id != null">
+        #{qkSeller2Id,jdbcType=BIGINT},
+      </if>
+      <if test="qkSeller3Id != null">
+        #{qkSeller3Id,jdbcType=BIGINT},
+      </if>
+      <if test="qkSpId != null">
+        #{qkSpId,jdbcType=BIGINT},
+      </if>
+      <if test="qkSeller1UserCode != null">
+        #{qkSeller1UserCode,jdbcType=VARCHAR},
+      </if>
+      <if test="qkSeller2UserCode != null">
+        #{qkSeller2UserCode,jdbcType=VARCHAR},
+      </if>
+      <if test="qkSeller3UserCode != null">
+        #{qkSeller3UserCode,jdbcType=VARCHAR},
+      </if>
+      <if test="qkSpUserCode != null">
+        #{qkSpUserCode,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantNo != null">
+        #{merchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantUserUuid != null">
+        #{merchantUserUuid,jdbcType=OTHER},
+      </if>
+      <if test="merchantAccountUuid != null">
+        #{merchantAccountUuid,jdbcType=OTHER},
+      </if>
+      <if test="isSelfCardSett != null">
+        #{isSelfCardSett,jdbcType=INTEGER},
+      </if>
+      <if test="bankCardNoCipher != null">
+        #{bankCardNoCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardNoMask != null">
+        #{bankCardNoMask,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountName != null">
+        #{bankAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankSubName != null">
+        #{bankSubName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankChannelNo != null">
+        #{bankChannelNo,jdbcType=VARCHAR},
+      </if>
+      <if test="clientNo != null">
+        #{clientNo,jdbcType=VARCHAR},
+      </if>
+      <if test="reqFlowNo != null">
+        #{reqFlowNo,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceReqFlowNo != null">
+        #{sourceReqFlowNo,jdbcType=VARCHAR},
+      </if>
+      <if test="walletType != null">
+        #{walletType,jdbcType=INTEGER},
+      </if>
+      <if test="riskDay != null">
+        #{riskDay,jdbcType=INTEGER},
+      </if>
+      <if test="withdrawAmount != null">
+        #{withdrawAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="merchantWithdrawRate != null">
+        #{merchantWithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="merchantWithdrawSingleFee != null">
+        #{merchantWithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="merchantWithdrawFee != null">
+        #{merchantWithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="merchantReceiveAmount != null">
+        #{merchantReceiveAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSpWithdrawRate != null">
+        #{qkSpWithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSpWithdrawSingleFee != null">
+        #{qkSpWithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSpWithdrawFee != null">
+        #{qkSpWithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSpWithdrawProfit != null">
+        #{qkSpWithdrawProfit,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller1WithdrawRate != null">
+        #{qkSeller1WithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller1WithdrawSingleFee != null">
+        #{qkSeller1WithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller1WithdrawFee != null">
+        #{qkSeller1WithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller1WithdrawProfit != null">
+        #{qkSeller1WithdrawProfit,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller2WithdrawRate != null">
+        #{qkSeller2WithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller2WithdrawSingleFee != null">
+        #{qkSeller2WithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller2WithdrawFee != null">
+        #{qkSeller2WithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller2WithdrawProfit != null">
+        #{qkSeller2WithdrawProfit,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller3WithdrawRate != null">
+        #{qkSeller3WithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller3WithdrawSingleFee != null">
+        #{qkSeller3WithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller3WithdrawFee != null">
+        #{qkSeller3WithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller3WithdrawProfit != null">
+        #{qkSeller3WithdrawProfit,jdbcType=NUMERIC},
+      </if>
+      <if test="isQkSpPost != null">
+        #{isQkSpPost,jdbcType=INTEGER},
+      </if>
+      <if test="isQkSeller1Post != null">
+        #{isQkSeller1Post,jdbcType=INTEGER},
+      </if>
+      <if test="isQkSeller2Post != null">
+        #{isQkSeller2Post,jdbcType=INTEGER},
+      </if>
+      <if test="isQkSeller3Post != null">
+        #{isQkSeller3Post,jdbcType=INTEGER},
+      </if>
+      <if test="qkSpPostTime != null">
+        #{qkSpPostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller1PostTime != null">
+        #{qkSeller1PostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller2PostTime != null">
+        #{qkSeller2PostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller3PostTime != null">
+        #{qkSeller3PostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remitType != null">
+        #{remitType,jdbcType=INTEGER},
+      </if>
+      <if test="remitStatus != null">
+        #{remitStatus,jdbcType=INTEGER},
+      </if>
+      <if test="remitReqTime != null">
+        #{remitReqTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remitFinishTime != null">
+        #{remitFinishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSpSettStatus != null">
+        #{qkSpSettStatus,jdbcType=INTEGER},
+      </if>
+      <if test="qkSeller1SettStatus != null">
+        #{qkSeller1SettStatus,jdbcType=INTEGER},
+      </if>
+      <if test="qkSeller2SettStatus != null">
+        #{qkSeller2SettStatus,jdbcType=INTEGER},
+      </if>
+      <if test="qkSeller3SettStatus != null">
+        #{qkSeller3SettStatus,jdbcType=INTEGER},
+      </if>
+      <if test="qkSpSettTime != null">
+        #{qkSpSettTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller1SettTime != null">
+        #{qkSeller1SettTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller2SettTime != null">
+        #{qkSeller2SettTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller3SettTime != null">
+        #{qkSeller3SettTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleteStatus != null">
+        #{deleteStatus,jdbcType=INTEGER},
+      </if>
+      <if test="transSourceType != null">
+        #{transSourceType,jdbcType=INTEGER},
+      </if>
+      <if test="allSpRateInfo != null">
+        #{allSpRateInfo,jdbcType=OTHER},
+      </if>
+      <if test="isHsyCal != null">
+        #{isHsyCal,jdbcType=INTEGER},
+      </if>
+      <if test="hsyCalTime != null">
+        #{hsyCalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transUserType != null">
+        #{transUserType,jdbcType=INTEGER},
+      </if>
+      <if test="withdrawFailedReason != null">
+        #{withdrawFailedReason,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardType != null">
+        #{bankCardType,jdbcType=INTEGER},
+      </if>
+      <if test="businessCheckFlag != null">
+        #{businessCheckFlag,jdbcType=INTEGER},
+      </if>
+      <if test="remitChannelNo != null">
+        #{remitChannelNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tongdun.data.entity.QkWithdrawTrans">
+    update cp_us_qk_withdraw_deposit_trans
+    <set>
+      <if test="qkSeller1Id != null">
+        qk_seller1_id = #{qkSeller1Id,jdbcType=BIGINT},
+      </if>
+      <if test="qkSeller2Id != null">
+        qk_seller2_id = #{qkSeller2Id,jdbcType=BIGINT},
+      </if>
+      <if test="qkSeller3Id != null">
+        qk_seller3_id = #{qkSeller3Id,jdbcType=BIGINT},
+      </if>
+      <if test="qkSpId != null">
+        qk_sp_id = #{qkSpId,jdbcType=BIGINT},
+      </if>
+      <if test="qkSeller1UserCode != null">
+        qk_seller1_user_code = #{qkSeller1UserCode,jdbcType=VARCHAR},
+      </if>
+      <if test="qkSeller2UserCode != null">
+        qk_seller2_user_code = #{qkSeller2UserCode,jdbcType=VARCHAR},
+      </if>
+      <if test="qkSeller3UserCode != null">
+        qk_seller3_user_code = #{qkSeller3UserCode,jdbcType=VARCHAR},
+      </if>
+      <if test="qkSpUserCode != null">
+        qk_sp_user_code = #{qkSpUserCode,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantNo != null">
+        merchant_no = #{merchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantUserUuid != null">
+        merchant_user_uuid = #{merchantUserUuid,jdbcType=OTHER},
+      </if>
+      <if test="merchantAccountUuid != null">
+        merchant_account_uuid = #{merchantAccountUuid,jdbcType=OTHER},
+      </if>
+      <if test="isSelfCardSett != null">
+        is_self_card_sett = #{isSelfCardSett,jdbcType=INTEGER},
+      </if>
+      <if test="bankCardNoCipher != null">
+        bank_card_no_cipher = #{bankCardNoCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardNoMask != null">
+        bank_card_no_mask = #{bankCardNoMask,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountName != null">
+        bank_account_name = #{bankAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankSubName != null">
+        bank_sub_name = #{bankSubName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankChannelNo != null">
+        bank_channel_no = #{bankChannelNo,jdbcType=VARCHAR},
+      </if>
+      <if test="clientNo != null">
+        client_no = #{clientNo,jdbcType=VARCHAR},
+      </if>
+      <if test="reqFlowNo != null">
+        req_flow_no = #{reqFlowNo,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceReqFlowNo != null">
+        source_req_flow_no = #{sourceReqFlowNo,jdbcType=VARCHAR},
+      </if>
+      <if test="walletType != null">
+        wallet_type = #{walletType,jdbcType=INTEGER},
+      </if>
+      <if test="riskDay != null">
+        risk_day = #{riskDay,jdbcType=INTEGER},
+      </if>
+      <if test="withdrawAmount != null">
+        withdraw_amount = #{withdrawAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="merchantWithdrawRate != null">
+        merchant_withdraw_rate = #{merchantWithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="merchantWithdrawSingleFee != null">
+        merchant_withdraw_single_fee = #{merchantWithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="merchantWithdrawFee != null">
+        merchant_withdraw_fee = #{merchantWithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="merchantReceiveAmount != null">
+        merchant_receive_amount = #{merchantReceiveAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSpWithdrawRate != null">
+        qk_sp_withdraw_rate = #{qkSpWithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSpWithdrawSingleFee != null">
+        qk_sp_withdraw_single_fee = #{qkSpWithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSpWithdrawFee != null">
+        qk_sp_withdraw_fee = #{qkSpWithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSpWithdrawProfit != null">
+        qk_sp_withdraw_profit = #{qkSpWithdrawProfit,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller1WithdrawRate != null">
+        qk_seller1_withdraw_rate = #{qkSeller1WithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller1WithdrawSingleFee != null">
+        qk_seller1_withdraw_single_fee = #{qkSeller1WithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller1WithdrawFee != null">
+        qk_seller1_withdraw_fee = #{qkSeller1WithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller1WithdrawProfit != null">
+        qk_seller1_withdraw_profit = #{qkSeller1WithdrawProfit,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller2WithdrawRate != null">
+        qk_seller2_withdraw_rate = #{qkSeller2WithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller2WithdrawSingleFee != null">
+        qk_seller2_withdraw_single_fee = #{qkSeller2WithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller2WithdrawFee != null">
+        qk_seller2_withdraw_fee = #{qkSeller2WithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller2WithdrawProfit != null">
+        qk_seller2_withdraw_profit = #{qkSeller2WithdrawProfit,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller3WithdrawRate != null">
+        qk_seller3_withdraw_rate = #{qkSeller3WithdrawRate,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller3WithdrawSingleFee != null">
+        qk_seller3_withdraw_single_fee = #{qkSeller3WithdrawSingleFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller3WithdrawFee != null">
+        qk_seller3_withdraw_fee = #{qkSeller3WithdrawFee,jdbcType=NUMERIC},
+      </if>
+      <if test="qkSeller3WithdrawProfit != null">
+        qk_seller3_withdraw_profit = #{qkSeller3WithdrawProfit,jdbcType=NUMERIC},
+      </if>
+      <if test="isQkSpPost != null">
+        is_qk_sp_post = #{isQkSpPost,jdbcType=INTEGER},
+      </if>
+      <if test="isQkSeller1Post != null">
+        is_qk_seller1_post = #{isQkSeller1Post,jdbcType=INTEGER},
+      </if>
+      <if test="isQkSeller2Post != null">
+        is_qk_seller2_post = #{isQkSeller2Post,jdbcType=INTEGER},
+      </if>
+      <if test="isQkSeller3Post != null">
+        is_qk_seller3_post = #{isQkSeller3Post,jdbcType=INTEGER},
+      </if>
+      <if test="qkSpPostTime != null">
+        qk_sp_post_time = #{qkSpPostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller1PostTime != null">
+        qk_seller1_post_time = #{qkSeller1PostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller2PostTime != null">
+        qk_seller2_post_time = #{qkSeller2PostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller3PostTime != null">
+        qk_seller3_post_time = #{qkSeller3PostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remitType != null">
+        remit_type = #{remitType,jdbcType=INTEGER},
+      </if>
+      <if test="remitStatus != null">
+        remit_status = #{remitStatus,jdbcType=INTEGER},
+      </if>
+      <if test="remitReqTime != null">
+        remit_req_time = #{remitReqTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remitFinishTime != null">
+        remit_finish_time = #{remitFinishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSpSettStatus != null">
+        qk_sp_sett_status = #{qkSpSettStatus,jdbcType=INTEGER},
+      </if>
+      <if test="qkSeller1SettStatus != null">
+        qk_seller1_sett_status = #{qkSeller1SettStatus,jdbcType=INTEGER},
+      </if>
+      <if test="qkSeller2SettStatus != null">
+        qk_seller2_sett_status = #{qkSeller2SettStatus,jdbcType=INTEGER},
+      </if>
+      <if test="qkSeller3SettStatus != null">
+        qk_seller3_sett_status = #{qkSeller3SettStatus,jdbcType=INTEGER},
+      </if>
+      <if test="qkSpSettTime != null">
+        qk_sp_sett_time = #{qkSpSettTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller1SettTime != null">
+        qk_seller1_sett_time = #{qkSeller1SettTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller2SettTime != null">
+        qk_seller2_sett_time = #{qkSeller2SettTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qkSeller3SettTime != null">
+        qk_seller3_sett_time = #{qkSeller3SettTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleteStatus != null">
+        delete_status = #{deleteStatus,jdbcType=INTEGER},
+      </if>
+      <if test="transSourceType != null">
+        trans_source_type = #{transSourceType,jdbcType=INTEGER},
+      </if>
+      <if test="allSpRateInfo != null">
+        all_sp_rate_info = #{allSpRateInfo,jdbcType=OTHER},
+      </if>
+      <if test="isHsyCal != null">
+        is_hsy_cal = #{isHsyCal,jdbcType=INTEGER},
+      </if>
+      <if test="hsyCalTime != null">
+        hsy_cal_time = #{hsyCalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transUserType != null">
+        trans_user_type = #{transUserType,jdbcType=INTEGER},
+      </if>
+      <if test="withdrawFailedReason != null">
+        withdraw_failed_reason = #{withdrawFailedReason,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardType != null">
+        bank_card_type = #{bankCardType,jdbcType=INTEGER},
+      </if>
+      <if test="businessCheckFlag != null">
+        business_check_flag = #{businessCheckFlag,jdbcType=INTEGER},
+      </if>
+      <if test="remitChannelNo != null">
+        remit_channel_no = #{remitChannelNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tongdun.data.entity.QkWithdrawTrans">
+    update cp_us_qk_withdraw_deposit_trans
+    set qk_seller1_id = #{qkSeller1Id,jdbcType=BIGINT},
+      qk_seller2_id = #{qkSeller2Id,jdbcType=BIGINT},
+      qk_seller3_id = #{qkSeller3Id,jdbcType=BIGINT},
+      qk_sp_id = #{qkSpId,jdbcType=BIGINT},
+      qk_seller1_user_code = #{qkSeller1UserCode,jdbcType=VARCHAR},
+      qk_seller2_user_code = #{qkSeller2UserCode,jdbcType=VARCHAR},
+      qk_seller3_user_code = #{qkSeller3UserCode,jdbcType=VARCHAR},
+      qk_sp_user_code = #{qkSpUserCode,jdbcType=VARCHAR},
+      merchant_no = #{merchantNo,jdbcType=VARCHAR},
+      merchant_user_uuid = #{merchantUserUuid,jdbcType=OTHER},
+      merchant_account_uuid = #{merchantAccountUuid,jdbcType=OTHER},
+      is_self_card_sett = #{isSelfCardSett,jdbcType=INTEGER},
+      bank_card_no_cipher = #{bankCardNoCipher,jdbcType=VARCHAR},
+      bank_card_no_mask = #{bankCardNoMask,jdbcType=VARCHAR},
+      bank_account_name = #{bankAccountName,jdbcType=VARCHAR},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      bank_sub_name = #{bankSubName,jdbcType=VARCHAR},
+      bank_channel_no = #{bankChannelNo,jdbcType=VARCHAR},
+      client_no = #{clientNo,jdbcType=VARCHAR},
+      req_flow_no = #{reqFlowNo,jdbcType=VARCHAR},
+      source_req_flow_no = #{sourceReqFlowNo,jdbcType=VARCHAR},
+      wallet_type = #{walletType,jdbcType=INTEGER},
+      risk_day = #{riskDay,jdbcType=INTEGER},
+      withdraw_amount = #{withdrawAmount,jdbcType=NUMERIC},
+      merchant_withdraw_rate = #{merchantWithdrawRate,jdbcType=NUMERIC},
+      merchant_withdraw_single_fee = #{merchantWithdrawSingleFee,jdbcType=NUMERIC},
+      merchant_withdraw_fee = #{merchantWithdrawFee,jdbcType=NUMERIC},
+      merchant_receive_amount = #{merchantReceiveAmount,jdbcType=NUMERIC},
+      qk_sp_withdraw_rate = #{qkSpWithdrawRate,jdbcType=NUMERIC},
+      qk_sp_withdraw_single_fee = #{qkSpWithdrawSingleFee,jdbcType=NUMERIC},
+      qk_sp_withdraw_fee = #{qkSpWithdrawFee,jdbcType=NUMERIC},
+      qk_sp_withdraw_profit = #{qkSpWithdrawProfit,jdbcType=NUMERIC},
+      qk_seller1_withdraw_rate = #{qkSeller1WithdrawRate,jdbcType=NUMERIC},
+      qk_seller1_withdraw_single_fee = #{qkSeller1WithdrawSingleFee,jdbcType=NUMERIC},
+      qk_seller1_withdraw_fee = #{qkSeller1WithdrawFee,jdbcType=NUMERIC},
+      qk_seller1_withdraw_profit = #{qkSeller1WithdrawProfit,jdbcType=NUMERIC},
+      qk_seller2_withdraw_rate = #{qkSeller2WithdrawRate,jdbcType=NUMERIC},
+      qk_seller2_withdraw_single_fee = #{qkSeller2WithdrawSingleFee,jdbcType=NUMERIC},
+      qk_seller2_withdraw_fee = #{qkSeller2WithdrawFee,jdbcType=NUMERIC},
+      qk_seller2_withdraw_profit = #{qkSeller2WithdrawProfit,jdbcType=NUMERIC},
+      qk_seller3_withdraw_rate = #{qkSeller3WithdrawRate,jdbcType=NUMERIC},
+      qk_seller3_withdraw_single_fee = #{qkSeller3WithdrawSingleFee,jdbcType=NUMERIC},
+      qk_seller3_withdraw_fee = #{qkSeller3WithdrawFee,jdbcType=NUMERIC},
+      qk_seller3_withdraw_profit = #{qkSeller3WithdrawProfit,jdbcType=NUMERIC},
+      is_qk_sp_post = #{isQkSpPost,jdbcType=INTEGER},
+      is_qk_seller1_post = #{isQkSeller1Post,jdbcType=INTEGER},
+      is_qk_seller2_post = #{isQkSeller2Post,jdbcType=INTEGER},
+      is_qk_seller3_post = #{isQkSeller3Post,jdbcType=INTEGER},
+      qk_sp_post_time = #{qkSpPostTime,jdbcType=TIMESTAMP},
+      qk_seller1_post_time = #{qkSeller1PostTime,jdbcType=TIMESTAMP},
+      qk_seller2_post_time = #{qkSeller2PostTime,jdbcType=TIMESTAMP},
+      qk_seller3_post_time = #{qkSeller3PostTime,jdbcType=TIMESTAMP},
+      remit_type = #{remitType,jdbcType=INTEGER},
+      remit_status = #{remitStatus,jdbcType=INTEGER},
+      remit_req_time = #{remitReqTime,jdbcType=TIMESTAMP},
+      remit_finish_time = #{remitFinishTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      qk_sp_sett_status = #{qkSpSettStatus,jdbcType=INTEGER},
+      qk_seller1_sett_status = #{qkSeller1SettStatus,jdbcType=INTEGER},
+      qk_seller2_sett_status = #{qkSeller2SettStatus,jdbcType=INTEGER},
+      qk_seller3_sett_status = #{qkSeller3SettStatus,jdbcType=INTEGER},
+      qk_sp_sett_time = #{qkSpSettTime,jdbcType=TIMESTAMP},
+      qk_seller1_sett_time = #{qkSeller1SettTime,jdbcType=TIMESTAMP},
+      qk_seller2_sett_time = #{qkSeller2SettTime,jdbcType=TIMESTAMP},
+      qk_seller3_sett_time = #{qkSeller3SettTime,jdbcType=TIMESTAMP},
+      delete_status = #{deleteStatus,jdbcType=INTEGER},
+      trans_source_type = #{transSourceType,jdbcType=INTEGER},
+      all_sp_rate_info = #{allSpRateInfo,jdbcType=OTHER},
+      is_hsy_cal = #{isHsyCal,jdbcType=INTEGER},
+      hsy_cal_time = #{hsyCalTime,jdbcType=TIMESTAMP},
+      trans_user_type = #{transUserType,jdbcType=INTEGER},
+      withdraw_failed_reason = #{withdrawFailedReason,jdbcType=VARCHAR},
+      bank_card_type = #{bankCardType,jdbcType=INTEGER},
+      business_check_flag = #{businessCheckFlag,jdbcType=INTEGER},
+      remit_channel_no = #{remitChannelNo,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
